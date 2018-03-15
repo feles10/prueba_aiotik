@@ -20,15 +20,34 @@ USE `AIOTIK` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`Usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Usuario` (
-  `Usuario` VARCHAR(45) NOT NULL,
-  `Password` VARCHAR(45) NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
-  `Apellido` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`Usuario`))
-ENGINE = InnoDB;
+CREATE TABLE `usuario` (
+  `User` varchar(45) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `Nombre` varchar(45) NOT NULL,
+  `Apellido` varchar(45) NOT NULL,
+  `Admin` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `usuario`
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+INSERT INTO `usuario` (`User`, `Password`, `Nombre`, `Apellido`, `Admin`) VALUES
+('Admin', '$2y$10$0/ras7OnOqjZ69K50SVCnOj6NWKKdt/XhhIgTwduVWnVn4dEHBawW', 'Admin', 'Admin', 1),
+('Felix', '$2y$10$/IzoL6HPYqVxBGRCzUiLf.SqPucHrUBF5NDkeO4tTCODF8Gqiq/ji', 'Felix', 'Guerrero', 0),
+('Jose', '$2y$10$MniH8bzcF5KhvMBl747fxO1yKmX.w3s8Pzm9skvD40K.sIKf6q9fS', 'Jose', 'Guerrero', 0);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`User`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

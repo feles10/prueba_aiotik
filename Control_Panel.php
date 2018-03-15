@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
  
 } else {
-   echo "Esta pagina es solo para usuarios registrados.<br>";
+   echo "Esta pagina es solo para el administrador.<br>";
    echo "<br><a href='login.html'>Login</a>";
    echo "<br><br><a href='index.html'>Registrarme</a>";
  
@@ -36,7 +36,7 @@ exit;
 		<h2><?php echo "Usuario: ".$_SESSION['User'];?></h2>
 
   			<a href="#" class="btn btn-primary" onclick="register()">Registrar</a>
-
+			<a href="#" class="btn btn-primary" onclick="Sistema()">Sistema</a>
  		<div id="register">
  			<form action="registro.php" method="post"> 
 

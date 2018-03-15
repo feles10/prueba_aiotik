@@ -58,7 +58,7 @@ exit;
  else{
 
  $query = "INSERT INTO usuario (User, Password, Nombre, Apellido)
-           VALUES ('$username', '$hash', 'name', 'lname')";
+           VALUES ('$username', '$hash', '$name', '$lname')";
 
  if ($conexion->query($query) === TRUE) {
  

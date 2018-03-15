@@ -12,3 +12,8 @@ function logout(){
 	alert("Su sesion se cerrara.");
 	location.href="Index.php";
 }
+
+function Sistema(){
+	alert("Redireccionando al Sistema");
+	location.href="System.php";
+}

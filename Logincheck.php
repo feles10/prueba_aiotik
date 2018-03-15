@@ -31,11 +31,17 @@ if ($result->num_rows > 0) {
  
     $_SESSION['loggedin'] = true;
     $_SESSION['User'] = $username;
+    $_SESSION['name'] = $row['Nombre'];
+    $_SESSION['lname'] = $row['Apellido'];
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
     echo "<center>Bienvenido! " . $_SESSION['User'] . "</center>";
-    echo "<center><br><br><a href=Control_Panel.php>Panel de Control</a></center>"; 
+    echo "<center><br><br><a href=System.php>Entrar al sistema</a></center>"; 
+
+    if ($row['Admin']==1) {
+    	echo "<center><br><br><a href=Control_Panel.php>Panel de Control</a></center>"; 
+    }
 
  } else { 
    echo "<center>Usuario o Contraseña estan incorrectos.</center>";

@@ -1,0 +1,40 @@
+El siguiente texto indica la funcionalidad de cada archivo usado dentro del sistema, así como los métodos
+y razón de su implementación.
+
+Index.php:
+
+Página de inicio del sistema, consta de 2 cuadros de texto y un botón. El primero corresponde al usuario y 
+el segundo a la contraseña. El botón tiene la finalidad de iniciar el proceso de verificación de datos
+dentro de la base de datos.
+
+Logincheck.php:
+
+Archivo que se encarga de las verificaciones de datos, comenzando por la búsqueda del usuario, el cual es único.
+Se realiza una sesión utilizada para verificar que se ha ingresado a todas las secciones del sistema, desde un
+usuario registrado, y cuenta con un temporizador de cierre de sesión en caso de inactividad.
+
+System.php:
+
+Contiene el sistema en cuestión, se encuentra el nombre del usuario que entro al sistema y un botón de cierre de sesión,
+el cual arroja una alerta en javascript que avisa al usuario que está a punto de cerrar su sesión.
+
+Control_Panel.php:
+
+Considerando la seguridad del sistema, diseñe un módulo para la creación de Usuarios, ya que la contraseña de
+los mismos se encuentra encriptada en CRYPT_BLOWFISH dentro de la base de datos.
+
+registro.php:
+
+Este módulo se encarga del registro de usuario dentro de la base de datos, implicando la encriptación de sus contraseñas
+usando CRYPT_BLOWFISH.
+
+Usuarios Registrados:
+
+Usuario: Admin
+Contraseña: 1234
+
+Usuario: Felix
+Contraseña: felix
+
+Usuario: Jose
+Contraseña: 5252
